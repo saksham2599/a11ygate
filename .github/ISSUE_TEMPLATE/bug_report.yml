@@ -1,0 +1,48 @@
+name: Bug report
+description: Report a reproducible issue with synthetic or redacted evidence.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please read SECURITY.md for sensitive reports. Do not include credentials,
+        raw device identifiers, signing files, or private UI content.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Describe the expected behavior and the actual result.
+    validations:
+      required: true
+  - type: dropdown
+    id: evidence_mode
+    attributes:
+      label: Which path was involved?
+      options:
+        - Mac build or unit tests
+        - Report replay or rendering
+        - Functional physical-device baseline
+        - Experimental physical VoiceOver run
+        - Optional cloud planning or diagnosis
+        - Documentation or setup
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Version and environment
+      description: Commit, Xcode/Swift, macOS, and device model/OS if relevant. Omit serial numbers and UDIDs.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Use the synthetic demo if possible. Replace device IDs, team IDs, and keys with placeholders.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Reviewed evidence and limitations
+      description: Include a small redacted excerpt. State what was not tested and whether the run was interrupted.

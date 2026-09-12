@@ -1,0 +1,25 @@
+.build/
+.swiftpm/
+artifacts/
+*.xcuserstate
+xcuserdata/
+.env
+.env.*
+!.env.example
+.DS_Store
+ios/Local.xcconfig
+
+# Signing, device-run configurations, and local build artifacts.
+DerivedData/
+build/
+*.xcresult/
+*.xcarchive/
+*.xctestrun
+*.ipa
+*.dSYM/
+*.p12
+*.p8
+*.mobileprovision
+*.provisionprofile
+*.key
+*.pem

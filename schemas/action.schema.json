@@ -1,0 +1,35 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "kind": {
+      "enum": [
+        "moveForward",
+        "moveBackward",
+        "moveIn",
+        "moveOut",
+        "activate",
+        "typeText",
+        "wait",
+        "finishSuccess",
+        "finishFailure"
+      ]
+    },
+    "target": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "textRef": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "kind"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

@@ -1,0 +1,374 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": 2
+    },
+    "generatedAt": {
+      "type": "string"
+    },
+    "mode": {
+      "enum": [
+        "voiceover",
+        "functional"
+      ]
+    },
+    "fixture": {
+      "enum": [
+        "fixed",
+        "broken"
+      ]
+    },
+    "device": {
+      "type": "string"
+    },
+    "xcode": {
+      "type": "string"
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/result"
+      }
+    },
+    "infrastructureError": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "generatedAt",
+    "mode",
+    "fixture",
+    "device",
+    "xcode",
+    "results"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$defs": {
+    "workflow": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "task": {
+          "type": "string"
+        },
+        "goal": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "task",
+        "goal"
+      ]
+    },
+    "action": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "moveForward",
+            "moveBackward",
+            "moveIn",
+            "moveOut",
+            "activate",
+            "typeText",
+            "wait",
+            "finishSuccess",
+            "finishFailure"
+          ]
+        },
+        "target": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "textRef": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "kind"
+      ]
+    },
+    "element": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "value": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "role"
+      ]
+    },
+    "observation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "screen": {
+          "type": "string"
+        },
+        "elements": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/element"
+          }
+        },
+        "voiceOverOutput": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "speechSource": {
+          "type": "string"
+        },
+        "focusedElement": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "appForeground": {
+          "type": "boolean"
+        },
+        "focusSource": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "keyboardVisible": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "screen",
+        "elements",
+        "speechSource",
+        "appForeground"
+      ]
+    },
+    "step": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "index": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "action": {
+          "$ref": "#/$defs/action"
+        },
+        "before": {
+          "$ref": "#/$defs/observation"
+        },
+        "after": {
+          "$ref": "#/$defs/observation"
+        },
+        "startedAt": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "completedAt": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "error": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "afterObserved": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "index",
+        "action",
+        "before",
+        "after"
+      ]
+    },
+    "diagnosis": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "reason": {
+          "type": "string"
+        },
+        "component": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "suggestion": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "certainty": {
+          "type": "string"
+        },
+        "evidenceIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "observedFacts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "reason",
+        "certainty"
+      ]
+    },
+    "result": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "a11ygate-workflow-v2"
+        },
+        "workflow": {
+          "$ref": "#/$defs/workflow"
+        },
+        "mode": {
+          "enum": [
+            "functional",
+            "voiceover"
+          ]
+        },
+        "status": {
+          "enum": [
+            "passed",
+            "failed",
+            "inconclusive",
+            "unsupported"
+          ]
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/step"
+          }
+        },
+        "lastObservation": {
+          "$ref": "#/$defs/observation"
+        },
+        "diagnosis": {
+          "$ref": "#/$defs/diagnosis"
+        },
+        "capabilities": {
+          "$ref": "#/$defs/capabilities"
+        },
+        "executionContext": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "kind",
+        "workflow",
+        "mode",
+        "status",
+        "steps",
+        "diagnosis"
+      ]
+    },
+    "capabilities": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "navigation": {
+          "type": "boolean"
+        },
+        "speech": {
+          "type": "boolean"
+        },
+        "activationFollowsFocus": {
+          "type": "boolean"
+        },
+        "injectedTextEntry": {
+          "type": "boolean"
+        },
+        "restored": {
+          "type": "boolean"
+        },
+        "utterances": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "error": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "navigation",
+        "speech",
+        "activationFollowsFocus",
+        "injectedTextEntry",
+        "restored",
+        "utterances"
+      ]
+    }
+  },
+  "title": "A11yGate run report v2"
+}

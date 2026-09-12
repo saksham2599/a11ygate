@@ -1,0 +1,14 @@
+# MVP syntax: id, task, goal. These IDs select the synthetic demo adapters.
+voiceover:
+  - id: login
+    task: Login
+    goal: >
+      Sign into the demo account using the supplied test credentials.
+  - id: create-item
+    task: Create Item
+    goal: >
+      Create an item named Buy Milk.
+  - id: checkout
+    task: Checkout
+    goal: >
+      Purchase the item using the demo checkout flow.

@@ -1,0 +1,23 @@
+name: Feature or improvement
+description: Propose an improvement to workflow testing, evidence, or developer experience.
+title: "[Proposal]: "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Developer or accessibility problem
+      description: What task becomes easier or more reliable?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Smallest useful change
+      description: Describe the proposed behavior and why it belongs in this preview.
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: How would we verify it?
+      description: Identify required APIs, runtime checks, and evidence without assuming unsupported automation.

@@ -1,0 +1,271 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "generatedAt": {
+      "type": "string"
+    },
+    "mode": {
+      "enum": [
+        "voiceover",
+        "functional"
+      ]
+    },
+    "fixture": {
+      "enum": [
+        "fixed",
+        "broken"
+      ]
+    },
+    "device": {
+      "type": "string"
+    },
+    "xcode": {
+      "type": "string"
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/result"
+      }
+    },
+    "infrastructureError": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "generatedAt",
+    "mode",
+    "fixture",
+    "device",
+    "xcode",
+    "results"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$defs": {
+    "workflow": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "task": {
+          "type": "string"
+        },
+        "goal": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "task",
+        "goal"
+      ]
+    },
+    "action": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "moveForward",
+            "moveBackward",
+            "activate",
+            "typeText",
+            "wait",
+            "finishSuccess",
+            "finishFailure"
+          ]
+        },
+        "target": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "textRef": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "kind"
+      ]
+    },
+    "element": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "value": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "role"
+      ]
+    },
+    "observation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "screen": {
+          "type": "string"
+        },
+        "elements": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/element"
+          }
+        },
+        "voiceOverOutput": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "speechSource": {
+          "type": "string"
+        },
+        "focusedElement": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "appForeground": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "screen",
+        "elements",
+        "speechSource",
+        "appForeground"
+      ]
+    },
+    "step": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "index": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "action": {
+          "$ref": "#/$defs/action"
+        },
+        "before": {
+          "$ref": "#/$defs/observation"
+        },
+        "after": {
+          "$ref": "#/$defs/observation"
+        }
+      },
+      "required": [
+        "index",
+        "action",
+        "before",
+        "after"
+      ]
+    },
+    "diagnosis": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "reason": {
+          "type": "string"
+        },
+        "component": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "suggestion": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "certainty": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "reason",
+        "certainty"
+      ]
+    },
+    "result": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "a11ygate-workflow-v1"
+        },
+        "workflow": {
+          "$ref": "#/$defs/workflow"
+        },
+        "mode": {
+          "enum": [
+            "functional",
+            "voiceover"
+          ]
+        },
+        "status": {
+          "enum": [
+            "passed",
+            "failed",
+            "inconclusive",
+            "unsupported"
+          ]
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/step"
+          }
+        },
+        "lastObservation": {
+          "$ref": "#/$defs/observation"
+        },
+        "diagnosis": {
+          "$ref": "#/$defs/diagnosis"
+        }
+      },
+      "required": [
+        "kind",
+        "workflow",
+        "mode",
+        "status",
+        "steps",
+        "diagnosis"
+      ]
+    }
+  },
+  "title": "A11yGate run report v1"
+}

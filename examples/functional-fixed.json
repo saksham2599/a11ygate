@@ -1,0 +1,947 @@
+{
+  "device" : "iPhone 12 \/ iOS 26.6.1",
+  "fixture" : "fixed",
+  "generatedAt" : "2026-09-12T11:52:55Z",
+  "mode" : "functional",
+  "results" : [
+    {
+      "diagnosis" : {
+        "certainty" : "observed",
+        "reason" : "Verified workflow postcondition in the app UI."
+      },
+      "kind" : "a11ygate-workflow-v1",
+      "lastObservation" : {
+        "appForeground" : true,
+        "elements" : [
+          {
+            "id" : "login.success",
+            "label" : "Signed in as Demo",
+            "role" : "XCUIElementType(rawValue: 48)"
+          },
+          {
+            "id" : "item.name",
+            "label" : "",
+            "role" : "XCUIElementType(rawValue: 49)"
+          },
+          {
+            "id" : "item.create",
+            "label" : "Create item",
+            "role" : "XCUIElementType(rawValue: 9)"
+          }
+        ],
+        "screen" : "DemoView \/ Items",
+        "speechSource" : "unavailable"
+      },
+      "mode" : "functional",
+      "status" : "passed",
+      "steps" : [
+        {
+          "action" : {
+            "kind" : "typeText",
+            "target" : "login.email",
+            "textRef" : "demo.email"
+          },
+          "after" : {
+            "appForeground" : true,
+            "elements" : [
+              {
+                "id" : "login.email",
+                "label" : "",
+                "role" : "XCUIElementType(rawValue: 49)",
+                "value" : "demo@example.invalid"
+              },
+              {
+                "id" : "login.password",
+                "label" : "",
+                "role" : "XCUIElementType(rawValue: 50)",
+                "value" : "[REDACTED]"
+              },
+              {
+                "id" : "login.submit",
+                "label" : "Sign in",
+                "role" : "XCUIElementType(rawValue: 9)"
+              }
+            ],
+            "screen" : "DemoView \/ Login",
+            "speechSource" : "unavailable"
+          },
+          "before" : {
+            "appForeground" : true,
+            "elements" : [
+              {
+                "id" : "login.email",
+                "label" : "",
+                "role" : "XCUIElementType(rawValue: 49)"
+              },
+              {
+                "id" : "login.password",
+                "label" : "",
+                "role" : "XCUIElementType(rawValue: 50)",
+                "value" : "[REDACTED]"
+              },
+              {
+                "id" : "login.submit",
+                "label" : "Sign in",
+                "role" : "XCUIElementType(rawValue: 9)"
+              }
+            ],
+            "screen" : "DemoView \/ Login",
+            "speechSource" : "unavailable"
+          },
+          "index" : 0
+        },
+        {
+          "action" : {
+            "kind" : "typeText",
+            "target" : "login.password",
+            "textRef" : "demo.password"
+          },
+          "after" : {
+            "appForeground" : true,
+            "elements" : [
+              {
+                "id" : "login.email",
+                "label" : "",
+                "role" : "XCUIElementType(rawValue: 49)",
+                "value" : "demo@example.invalid"
+              },
+              {
+                "id" : "login.password",
+                "label" : "",
+                "role" : "XCUIElementType(rawValue: 50)",
+                "value" : "[REDACTED]"
+              },
+              {
+                "id" : "login.submit",
+                "label" : "Sign in",
+                "role" : "XCUIElementType(rawValue: 9)"
+              }
+            ],
+            "screen" : "DemoView \/ Login",
+            "speechSource" : "unavailable"
+          },
+          "before" : {
+            "appForeground" : true,
+            "elements" : [
+              {
+                "id" : "login.email",
+                "label" : "",
+                "role" : "XCUIElementType(rawValue: 49)",
+                "value" : "demo@example.invalid"
+              },
+              {
+                "id" : "login.password",
+                "label" : "",
+                "role" : "XCUIElementType(rawValue: 50)",
+                "value" : "[REDACTED]"
+              },
+              {
+                "id" : "login.submit",
+                "label" : "Sign in",
+                "role" : "XCUIElementType(rawValue: 9)"
+              }
+            ],
+            "screen" : "DemoView \/ Login",
+            "speechSource" : "unavailable"
+          },
+          "index" : 1
+        },
+        {
+          "action" : {
+            "kind" : "activate",
+            "target" : "login.submit"
+          },
+          "after" : {
+            "appForeground" : true,
+            "elements" : [
+              {
+                "id" : "login.success",
+                "label" : "Signed in as Demo",
+                "role" : "XCUIElementType(rawValue: 48)"
+              },
+              {
+                "id" : "item.name",
+                "label" : "",
+                "role" : "XCUIElementType(rawValue: 49)"
+              },
+              {
+                "id" : "item.create",
+                "label" : "Create item",
+                "role" : "XCUIElementType(rawValue: 9)"
+              }
+            ],
+            "screen" : "DemoView \/ Items",
+            "speechSource" : "unavailable"
+          },
+          "before" : {
+            "appForeground" : true,
+            "elements" : [
+              {
+                "id" : "login.email",
+                "label" : "",
+                "role" : "XCUIElementType(rawValue: 49)",
+                "value" : "demo@example.invalid"
+              },
+              {
+                "id" : "login.password",
+                "label" : "",
+                "role" : "XCUIElementType(rawValue: 50)",
+                "value" : "[REDACTED]"
+              },
+              {
+                "id" : "login.submit",
+                "label" : "Sign in",
+                "role" : "XCUIElementType(rawValue: 9)"
+              }
+            ],
+            "screen" : "DemoView \/ Login",
+            "speechSource" : "unavailable"
+          },
+          "index" : 2
+        }
+      ],
+      "workflow" : {
+        "goal" : "Sign into the demo account using the supplied test credentials.",
+        "id" : "login",
+        "task" : "Login"
+      }
+    },
+    {
+      "diagnosis" : {
+        "certainty" : "observed",
+        "reason" : "Verified workflow postcondition in the app UI."
+      },
+      "kind" : "a11ygate-workflow-v1",
+      "lastObservation" : {
+        "appForeground" : true,
+        "elements" : [
+          {
+            "id" : "login.success",
+            "label" : "Signed in as Demo",
+            "role" : "XCUIElementType(rawValue: 48)"
+          },
+          {
+            "id" : "item.name",
+            "label" : "",
+            "role" : "XCUIElementType(rawValue: 49)"
+          },
+          {
+            "id" : "item.create",
+            "label" : "Create item",
+            "role" : "XCUIElementType(rawValue: 9)"
+          },
+          {
+            "id" : "item.created",
+            "label" : "Buy Milk",
+            "role" : "XCUIElementType(rawValue: 48)"
+          },
+          {
+            "id" : "checkout.purchase",
+            "label" : "Place demo order",
+            "role" : "XCUIElementType(rawValue: 9)"
+          }
+        ],
+        "screen" : "DemoView \/ Checkout",
+        "speechSource" : "unavailable"
+      },
+      "mode" : "functional",
+      "status" : "passed",
+      "steps" : [
+        {
+          "action" : {
+            "kind" : "typeText",
+            "target" : "login.email",
+            "textRef" : "demo.email"
+          },
+          "after" : {
+            "appForeground" : true,
+            "elements" : [
+              {
+                "id" : "login.email",
+                "label" : "",
+                "role" : "XCUIElementType(rawValue: 49)",
+                "value" : "demo@example.invalid"
+              },
+              {
+                "id" : "login.password",
+                "label" : "",
+                "role" : "XCUIElementType(rawValue: 50)",
+                "value" : "[REDACTED]"
+              },
+              {
+                "id" : "login.submit",
+                "label" : "Sign in",
+                "role" : "XCUIElementType(rawValue: 9)"
+              }
+            ],
+            "screen" : "DemoView \/ Login",
+            "speechSource" : "unavailable"
+          },
+          "before" : {
+            "appForeground" : true,
+            "elements" : [
+              {
+                "id" : "login.email",
+                "label" : "",
+                "role" : "XCUIElementType(rawValue: 49)"
+              },
+              {
+                "id" : "login.password",
+                "label" : "",
+                "role" : "XCUIElementType(rawValue: 50)",
+                "value" : "[REDACTED]"
+              },
+              {
+                "id" : "login.submit",
+                "label" : "Sign in",
+                "role" : "XCUIElementType(rawValue: 9)"
+              }
+            ],
+            "screen" : "DemoView \/ Login",
+            "speechSource" : "unavailable"
+          },
+          "index" : 0
+        },
+        {
+          "action" : {
+            "kind" : "typeText",
+            "target" : "login.password",
+            "textRef" : "demo.password"
+          },
+          "after" : {
+            "appForeground" : true,
+            "elements" : [
+              {
+                "id" : "login.email",
+                "label" : "",
+                "role" : "XCUIElementType(rawValue: 49)",
+                "value" : "demo@example.invalid"
+              },
+              {
+                "id" : "login.password",
+                "label" : "",
+                "role" : "XCUIElementType(rawValue: 50)",
+                "value" : "[REDACTED]"
+              },
+              {
+                "id" : "login.submit",
+                "label" : "Sign in",
+                "role" : "XCUIElementType(rawValue: 9)"
+              }
+            ],
+            "screen" : "DemoView \/ Login",
+            "speechSource" : "unavailable"
+          },
+          "before" : {
+            "appForeground" : true,
+            "elements" : [
+              {
+                "id" : "login.email",
+                "label" : "",
+                "role" : "XCUIElementType(rawValue: 49)",
+                "value" : "demo@example.invalid"
+              },
+              {
+                "id" : "login.password",
+                "label" : "",
+                "role" : "XCUIElementType(rawValue: 50)",
+                "value" : "[REDACTED]"
+              },
+              {
+                "id" : "login.submit",
+                "label" : "Sign in",
+                "role" : "XCUIElementType(rawValue: 9)"
+              }
+            ],
+            "screen" : "DemoView \/ Login",
+            "speechSource" : "unavailable"
+          },
+          "index" : 1
+        },
+        {
+          "action" : {
+            "kind" : "activate",
+            "target" : "login.submit"
+          },
+          "after" : {
+            "appForeground" : true,
+            "elements" : [
+              {
+                "id" : "login.success",
+                "label" : "Signed in as Demo",
+                "role" : "XCUIElementType(rawValue: 48)"
+              },
+              {
+                "id" : "item.name",
+                "label" : "",
+                "role" : "XCUIElementType(rawValue: 49)"
+              },
+              {
+                "id" : "item.create",
+                "label" : "Create item",
+                "role" : "XCUIElementType(rawValue: 9)"
+              }
+            ],
+            "screen" : "DemoView \/ Items",
+            "speechSource" : "unavailable"
+          },
+          "before" : {
+            "appForeground" : true,
+            "elements" : [
+              {
+                "id" : "login.email",
+                "label" : "",
+                "role" : "XCUIElementType(rawValue: 49)",
+                "value" : "demo@example.invalid"
+              },
+              {
+                "id" : "login.password",
+                "label" : "",
+                "role" : "XCUIElementType(rawValue: 50)",
+                "value" : "[REDACTED]"
+              },
+              {
+                "id" : "login.submit",
+                "label" : "Sign in",
+                "role" : "XCUIElementType(rawValue: 9)"
+              }
+            ],
+            "screen" : "DemoView \/ Login",
+            "speechSource" : "unavailable"
+          },
+          "index" : 2
+        },
+        {
+          "action" : {
+            "kind" : "typeText",
+            "target" : "item.name",
+            "textRef" : "item.name"
+          },
+          "after" : {
+            "appForeground" : true,
+            "elements" : [
+              {
+                "id" : "login.success",
+                "label" : "Signed in as Demo",
+                "role" : "XCUIElementType(rawValue: 48)"
+              },
+              {
+                "id" : "item.name",
+                "label" : "",
+                "role" : "XCUIElementType(rawValue: 49)",
+                "value" : "Buy Milk"
+              },
+              {
+                "id" : "item.create",
+                "label" : "Create item",
+                "role" : "XCUIElementType(rawValue: 9)"
+              }
+            ],
+            "screen" : "DemoView \/ Items",
+            "speechSource" : "unavailable"
+          },
+          "before" : {
+            "appForeground" : true,
+            "elements" : [
+              {
+                "id" : "login.success",
+                "label" : "Signed in as Demo",
+                "role" : "XCUIElementType(rawValue: 48)"
+              },
+              {
+                "id" : "item.name",
+                "label" : "",
+                "role" : "XCUIElementType(rawValue: 49)"
+              },
+              {
+                "id" : "item.create",
+                "label" : "Create item",
+                "role" : "XCUIElementType(rawValue: 9)"
+              }
+            ],
+            "screen" : "DemoView \/ Items",
+            "speechSource" : "unavailable"
+          },
+          "index" : 3
+        },
+        {
+          "action" : {
+            "kind" : "activate",
+            "target" : "item.create"
+          },
+          "after" : {
+            "appForeground" : true,
+            "elements" : [
+              {
+                "id" : "login.success",
+                "label" : "Signed in as Demo",
+                "role" : "XCUIElementType(rawValue: 48)"
+              },
+              {
+                "id" : "item.name",
+                "label" : "",
+                "role" : "XCUIElementType(rawValue: 49)"
+              },
+              {
+                "id" : "item.create",
+                "label" : "Create item",
+                "role" : "XCUIElementType(rawValue: 9)"
+              },
+              {
+                "id" : "item.created",
+                "label" : "Buy Milk",
+                "role" : "XCUIElementType(rawValue: 48)"
+              },
+              {
+                "id" : "checkout.purchase",
+                "label" : "Place demo order",
+                "role" : "XCUIElementType(rawValue: 9)"
+              }
+            ],
+            "screen" : "DemoView \/ Checkout",
+            "speechSource" : "unavailable"
+          },
+          "before" : {
+            "appForeground" : true,
+            "elements" : [
+              {
+                "id" : "login.success",
+                "label" : "Signed in as Demo",
+                "role" : "XCUIElementType(rawValue: 48)"
+              },
+              {
+                "id" : "item.name",
+                "label" : "",
+                "role" : "XCUIElementType(rawValue: 49)",
+                "value" : "Buy Milk"
+              },
+              {
+                "id" : "item.create",
+                "label" : "Create item",
+                "role" : "XCUIElementType(rawValue: 9)"
+              }
+            ],
+            "screen" : "DemoView \/ Items",
+            "speechSource" : "unavailable"
+          },
+          "index" : 4
+        }
+      ],
+      "workflow" : {
+        "goal" : "Create an item named Buy Milk.",
+        "id" : "create-item",
+        "task" : "Create Item"
+      }
+    },
+    {
+      "diagnosis" : {
+        "certainty" : "observed",
+        "reason" : "Verified workflow postcondition in the app UI."
+      },
+      "kind" : "a11ygate-workflow-v1",
+      "lastObservation" : {
+        "appForeground" : true,
+        "elements" : [
+          {
+            "id" : "login.success",
+            "label" : "Signed in as Demo",
+            "role" : "XCUIElementType(rawValue: 48)"
+          },
+          {
+            "id" : "item.name",
+            "label" : "",
+            "role" : "XCUIElementType(rawValue: 49)"
+          },
+          {
+            "id" : "item.create",
+            "label" : "Create item",
+            "role" : "XCUIElementType(rawValue: 9)"
+          },
+          {
+            "id" : "item.created",
+            "label" : "Buy Milk",
+            "role" : "XCUIElementType(rawValue: 48)"
+          },
+          {
+            "id" : "checkout.purchase",
+            "label" : "Place demo order",
+            "role" : "XCUIElementType(rawValue: 9)"
+          },
+          {
+            "id" : "checkout.success",
+            "label" : "Order confirmed",
+            "role" : "XCUIElementType(rawValue: 48)"
+          }
+        ],
+        "screen" : "DemoView \/ Checkout",
+        "speechSource" : "unavailable"
+      },
+      "mode" : "functional",
+      "status" : "passed",
+      "steps" : [
+        {
+          "action" : {
+            "kind" : "typeText",
+            "target" : "login.email",
+            "textRef" : "demo.email"
+          },
+          "after" : {
+            "appForeground" : true,
+            "elements" : [
+              {
+                "id" : "login.email",
+                "label" : "",
+                "role" : "XCUIElementType(rawValue: 49)",
+                "value" : "demo@example.invalid"
+              },
+              {
+                "id" : "login.password",
+                "label" : "",
+                "role" : "XCUIElementType(rawValue: 50)",
+                "value" : "[REDACTED]"
+              },
+              {
+                "id" : "login.submit",
+                "label" : "Sign in",
+                "role" : "XCUIElementType(rawValue: 9)"
+              }
+            ],
+            "screen" : "DemoView \/ Login",
+            "speechSource" : "unavailable"
+          },
+          "before" : {
+            "appForeground" : true,
+            "elements" : [
+              {
+                "id" : "login.email",
+                "label" : "",
+                "role" : "XCUIElementType(rawValue: 49)"
+              },
+              {
+                "id" : "login.password",
+                "label" : "",
+                "role" : "XCUIElementType(rawValue: 50)",
+                "value" : "[REDACTED]"
+              },
+              {
+                "id" : "login.submit",
+                "label" : "Sign in",
+                "role" : "XCUIElementType(rawValue: 9)"
+              }
+            ],
+            "screen" : "DemoView \/ Login",
+            "speechSource" : "unavailable"
+          },
+          "index" : 0
+        },
+        {
+          "action" : {
+            "kind" : "typeText",
+            "target" : "login.password",
+            "textRef" : "demo.password"
+          },
+          "after" : {
+            "appForeground" : true,
+            "elements" : [
+              {
+                "id" : "login.email",
+                "label" : "",
+                "role" : "XCUIElementType(rawValue: 49)",
+                "value" : "demo@example.invalid"
+              },
+              {
+                "id" : "login.password",
+                "label" : "",
+                "role" : "XCUIElementType(rawValue: 50)",
+                "value" : "[REDACTED]"
+              },
+              {
+                "id" : "login.submit",
+                "label" : "Sign in",
+                "role" : "XCUIElementType(rawValue: 9)"
+              }
+            ],
+            "screen" : "DemoView \/ Login",
+            "speechSource" : "unavailable"
+          },
+          "before" : {
+            "appForeground" : true,
+            "elements" : [
+              {
+                "id" : "login.email",
+                "label" : "",
+                "role" : "XCUIElementType(rawValue: 49)",
+                "value" : "demo@example.invalid"
+              },
+              {
+                "id" : "login.password",
+                "label" : "",
+                "role" : "XCUIElementType(rawValue: 50)",
+                "value" : "[REDACTED]"
+              },
+              {
+                "id" : "login.submit",
+                "label" : "Sign in",
+                "role" : "XCUIElementType(rawValue: 9)"
+              }
+            ],
+            "screen" : "DemoView \/ Login",
+            "speechSource" : "unavailable"
+          },
+          "index" : 1
+        },
+        {
+          "action" : {
+            "kind" : "activate",
+            "target" : "login.submit"
+          },
+          "after" : {
+            "appForeground" : true,
+            "elements" : [
+              {
+                "id" : "login.success",
+                "label" : "Signed in as Demo",
+                "role" : "XCUIElementType(rawValue: 48)"
+              },
+              {
+                "id" : "item.name",
+                "label" : "",
+                "role" : "XCUIElementType(rawValue: 49)"
+              },
+              {
+                "id" : "item.create",
+                "label" : "Create item",
+                "role" : "XCUIElementType(rawValue: 9)"
+              }
+            ],
+            "screen" : "DemoView \/ Items",
+            "speechSource" : "unavailable"
+          },
+          "before" : {
+            "appForeground" : true,
+            "elements" : [
+              {
+                "id" : "login.email",
+                "label" : "",
+                "role" : "XCUIElementType(rawValue: 49)",
+                "value" : "demo@example.invalid"
+              },
+              {
+                "id" : "login.password",
+                "label" : "",
+                "role" : "XCUIElementType(rawValue: 50)",
+                "value" : "[REDACTED]"
+              },
+              {
+                "id" : "login.submit",
+                "label" : "Sign in",
+                "role" : "XCUIElementType(rawValue: 9)"
+              }
+            ],
+            "screen" : "DemoView \/ Login",
+            "speechSource" : "unavailable"
+          },
+          "index" : 2
+        },
+        {
+          "action" : {
+            "kind" : "typeText",
+            "target" : "item.name",
+            "textRef" : "item.name"
+          },
+          "after" : {
+            "appForeground" : true,
+            "elements" : [
+              {
+                "id" : "login.success",
+                "label" : "Signed in as Demo",
+                "role" : "XCUIElementType(rawValue: 48)"
+              },
+              {
+                "id" : "item.name",
+                "label" : "",
+                "role" : "XCUIElementType(rawValue: 49)",
+                "value" : "Buy Milk"
+              },
+              {
+                "id" : "item.create",
+                "label" : "Create item",
+                "role" : "XCUIElementType(rawValue: 9)"
+              }
+            ],
+            "screen" : "DemoView \/ Items",
+            "speechSource" : "unavailable"
+          },
+          "before" : {
+            "appForeground" : true,
+            "elements" : [
+              {
+                "id" : "login.success",
+                "label" : "Signed in as Demo",
+                "role" : "XCUIElementType(rawValue: 48)"
+              },
+              {
+                "id" : "item.name",
+                "label" : "",
+                "role" : "XCUIElementType(rawValue: 49)"
+              },
+              {
+                "id" : "item.create",
+                "label" : "Create item",
+                "role" : "XCUIElementType(rawValue: 9)"
+              }
+            ],
+            "screen" : "DemoView \/ Items",
+            "speechSource" : "unavailable"
+          },
+          "index" : 3
+        },
+        {
+          "action" : {
+            "kind" : "activate",
+            "target" : "item.create"
+          },
+          "after" : {
+            "appForeground" : true,
+            "elements" : [
+              {
+                "id" : "login.success",
+                "label" : "Signed in as Demo",
+                "role" : "XCUIElementType(rawValue: 48)"
+              },
+              {
+                "id" : "item.name",
+                "label" : "",
+                "role" : "XCUIElementType(rawValue: 49)"
+              },
+              {
+                "id" : "item.create",
+                "label" : "Create item",
+                "role" : "XCUIElementType(rawValue: 9)"
+              },
+              {
+                "id" : "item.created",
+                "label" : "Buy Milk",
+                "role" : "XCUIElementType(rawValue: 48)"
+              },
+              {
+                "id" : "checkout.purchase",
+                "label" : "Place demo order",
+                "role" : "XCUIElementType(rawValue: 9)"
+              }
+            ],
+            "screen" : "DemoView \/ Checkout",
+            "speechSource" : "unavailable"
+          },
+          "before" : {
+            "appForeground" : true,
+            "elements" : [
+              {
+                "id" : "login.success",
+                "label" : "Signed in as Demo",
+                "role" : "XCUIElementType(rawValue: 48)"
+              },
+              {
+                "id" : "item.name",
+                "label" : "",
+                "role" : "XCUIElementType(rawValue: 49)",
+                "value" : "Buy Milk"
+              },
+              {
+                "id" : "item.create",
+                "label" : "Create item",
+                "role" : "XCUIElementType(rawValue: 9)"
+              }
+            ],
+            "screen" : "DemoView \/ Items",
+            "speechSource" : "unavailable"
+          },
+          "index" : 4
+        },
+        {
+          "action" : {
+            "kind" : "activate",
+            "target" : "checkout.purchase"
+          },
+          "after" : {
+            "appForeground" : true,
+            "elements" : [
+              {
+                "id" : "login.success",
+                "label" : "Signed in as Demo",
+                "role" : "XCUIElementType(rawValue: 48)"
+              },
+              {
+                "id" : "item.name",
+                "label" : "",
+                "role" : "XCUIElementType(rawValue: 49)"
+              },
+              {
+                "id" : "item.create",
+                "label" : "Create item",
+                "role" : "XCUIElementType(rawValue: 9)"
+              },
+              {
+                "id" : "item.created",
+                "label" : "Buy Milk",
+                "role" : "XCUIElementType(rawValue: 48)"
+              },
+              {
+                "id" : "checkout.purchase",
+                "label" : "Place demo order",
+                "role" : "XCUIElementType(rawValue: 9)"
+              },
+              {
+                "id" : "checkout.success",
+                "label" : "Order confirmed",
+                "role" : "XCUIElementType(rawValue: 48)"
+              }
+            ],
+            "screen" : "DemoView \/ Checkout",
+            "speechSource" : "unavailable"
+          },
+          "before" : {
+            "appForeground" : true,
+            "elements" : [
+              {
+                "id" : "login.success",
+                "label" : "Signed in as Demo",
+                "role" : "XCUIElementType(rawValue: 48)"
+              },
+              {
+                "id" : "item.name",
+                "label" : "",
+                "role" : "XCUIElementType(rawValue: 49)"
+              },
+              {
+                "id" : "item.create",
+                "label" : "Create item",
+                "role" : "XCUIElementType(rawValue: 9)"
+              },
+              {
+                "id" : "item.created",
+                "label" : "Buy Milk",
+                "role" : "XCUIElementType(rawValue: 48)"
+              },
+              {
+                "id" : "checkout.purchase",
+                "label" : "Place demo order",
+                "role" : "XCUIElementType(rawValue: 9)"
+              }
+            ],
+            "screen" : "DemoView \/ Checkout",
+            "speechSource" : "unavailable"
+          },
+          "index" : 5
+        }
+      ],
+      "workflow" : {
+        "goal" : "Purchase the item using the demo checkout flow.",
+        "id" : "checkout",
+        "task" : "Checkout"
+      }
+    }
+  ],
+  "schemaVersion" : 1,
+  "xcode" : "Xcode 26.6\nBuild version 17F113"
+}
