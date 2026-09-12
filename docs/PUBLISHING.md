@@ -12,7 +12,7 @@ separate actions from creating and pushing the private repository.
 - [x] Document setup, signing, experimental device execution, CLI options, and troubleshooting.
 - [x] Include MIT license, contributing guidance, code of conduct, security policy, and issue/PR templates.
 - [x] Ignore generated evidence, signing files, archives, and temporary test configurations.
-- [ ] Confirm private repository creation and a successful source push.
+- [x] Confirm private repository creation and a successful source push.
 
 ## Before changing visibility to public
 

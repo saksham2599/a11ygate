@@ -116,3 +116,32 @@ diagnosis, outside-developer integration, and human VoiceOver review. No public
 repository, release, Product Hunt submission, or CI accessibility claim was
 published. The implementation is a compiled experimental preview, not a completed
 physical VoiceOver acceptance test.
+
+## 2026-09-12 — Private GitHub developer preview
+
+- Created [saksham2599/a11ygate](https://github.com/saksham2599/a11ygate) as a
+  **private** repository and pushed the reviewed initial source commit
+  `e42afec690a4d2a349e650a5e4ca94124d909abe` to `main`.
+- GitHub's repository API confirmed private visibility, recognized the MIT
+  license, served the README, and returned the same initial commit SHA.
+- Expanded the problem overview, setup and CLI guides, contribution instructions,
+  and publication checklist; added security guidance and issue/PR templates.
+- Checked relative file links across 14 Markdown files: no missing targets.
+  All three issue-template YAML files parsed successfully.
+- Reviewed all 49 initial staged files. The pattern scan found no provider
+  tokens, private keys, personal home-directory paths, or physical device IDs.
+  Generated raw evidence and signing material remain excluded from Git.
+- Cloned the private GitHub repository into a fresh temporary directory to
+  verify setup from the pushed source.
+- Fresh-clone Mac suite: **35 tests passed, 0 failures**, using Xcode 27's
+  Swift toolchain and a separate empty SwiftPM scratch/module-cache directory.
+  The agent environment required `swift test --disable-sandbox` with local
+  network access for the encrypted stub test. No provider request was made.
+- The CLI built in that fresh clone replayed the fixed report with exit 0 and
+  the broken report with expected exit 2. Comparison showed Checkout changing
+  from INCONCLUSIVE to PASS and retained the functional-only evidence warning.
+  HTML export succeeded; this was an export check, not visual or screen-reader QA.
+
+This is private source sharing, not a public release or Product Hunt submission.
+No iOS simulator, physical-device operation, or live OpenAI call was used for
+this publication-preparation check. The runtime limitations above still apply.
